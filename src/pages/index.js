@@ -1,7 +1,7 @@
 import * as React from "react";
 
 const IndexPage = () => {
-  return <div></div>;
+  return <div className="text-3xl font-bold">Hello World</div>;
 };
 
 export default IndexPage;
