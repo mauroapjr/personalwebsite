@@ -45,6 +45,9 @@ jobs:
 
     - name: Build Gatsby
       run: npm run build
+      env:
+        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
 
     - name: Deploy to S3
       run: aws s3 sync ./public/ s3://${{ env.BUCKET_NAME }} --delete
