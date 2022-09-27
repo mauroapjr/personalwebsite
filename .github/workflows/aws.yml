@@ -28,17 +28,17 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-     - name: Caching Gatsby
-        id: gatsby-cache-build
-        uses: actions/cache@v2
-        with:
-          path: |
-            public
-            .cache
-            node_modules
-          key: ${{ runner.os }}-personalsite-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-personalsite-
+    - name: Caching Gatsby
+      id: gatsby-cache-build
+      uses: actions/cache@v3
+      with:
+        path: |
+          public
+          .cache
+          node_modules
+        key: ${{ runner.os }}-personalsite-${{ github.run_id }}
+        restore-keys: |
+          ${{ runner.os }}-personalsite-
     
     - name: Install Dependencies
       run: npm install
