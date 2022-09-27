@@ -53,5 +53,5 @@ jobs:
       run: aws s3 sync ./public/ s3://${{ env.BUCKET_NAME }} --delete
 
     - name: Clear Cache
-      run: aws cloudfront create-invalidation --distribution-id ${{ env.DISTRIBUTION_ID }} --paths '/*';"
+      run: aws cloudfront create-invalidation --distribution-id ${{ env.DISTRIBUTION_ID }} --paths '/*'
     
