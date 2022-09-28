@@ -23,8 +23,8 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <section className="flex">
-        <div className="bg-gray-100 w-1/3 py-40 flex justify-center">
+      <section className="md:flex">
+        <div className="bg-gray-100  py-10 flex justify-center md:w-1/3 md:py-40">
           <img
             src={`${data.contentfulHome.profilePhoto.url}?f=face&fit=thumb&r=max&w=235&h=235&fm=png`}
             alt=""
@@ -40,11 +40,11 @@ const IndexPage = ({ data }) => {
               </span>
             </h1>
 
-            <div className="flex my-4 justify-between items-center">
+            <div className="md:flex my-4 justify-between items-center">
               <h2 className="text-gray-400 text-2xl font-light">
                 {data.contentfulHome.profileHeadline}
               </h2>
-              <div className="flex space-x-1">
+              <div className="flex md:space-x-1">
                 {data.allContentfulExternalProfile.nodes.map(
                   (externalProfile, idx) => (
                     <SocialButton
@@ -79,11 +79,11 @@ const IndexPage = ({ data }) => {
             <article className="max-w-xl text-justify text-gray-800 first:mt-0 mt-10 last:border-b-0 border-b-2 border-gray-300">
               <h4 className="font-bold text-xl">{experience.title}</h4>
               <span className="block">{experience.companyName}</span>
-              <span className="block text-sm text-gray-600">
+              <span className="space-x-8 lock text-sm text-gray-600">
                 <time dateTime={experience.startDate}>
                   {experience.startDate}
                 </time>
-                -
+
                 <time dateTime={experience.endDate}>
                   {experience.endDate || "present"}
                 </time>
@@ -128,7 +128,7 @@ const IndexPage = ({ data }) => {
 
       <div>
         <section className="flex">
-          <div className="bg-gray-100 w-1/3 py-10 px-20 text-right">
+          <div className="bg-gray-100 w-1/3 py-10 md:px-20 text-right">
             <h5 className="text-2xl font-semibold text-gray-500">IDIOMS</h5>
           </div>
           <div className="bg-gray-200 block w-2/3 px-20 py-10 text-gray-800">
