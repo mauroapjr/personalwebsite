@@ -73,6 +73,17 @@ const IndexPage = ({ data }) => {
       <section className="flex">
         <div className="block bg-gray-100 w-1/3 py-10 md:px-40 text-right space-x-50">
           <h3 className="text-2xl font-semibold text-blue-900">EXPERIENCE</h3>
+          <div className="text-xl text-gray-300">
+            {data.allContentfulKeyAbilities.nodes.map(
+              (keyAbilities, abilities, idx) => (
+                <>
+                  <section className="block text-center font-bold text-xl">
+                    {keyAbilities.abilities}
+                  </section>
+                </>
+              )
+            )}
+          </div>
         </div>
         <div className="bg-gray-200 block w-2/3 px-20 py-10 text-gray-800">
           {data.allContentfulExperience.nodes.map((experience, idx) => (
@@ -177,6 +188,12 @@ export const query = graphql`
         }
         companyName
         location
+      }
+    }
+    allContentfulKeyAbilities {
+      nodes {
+        keyAbilities
+        abilities
       }
     }
   }
