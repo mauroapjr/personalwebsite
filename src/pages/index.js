@@ -60,7 +60,7 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
       <section className="flex">
-        <div className="bg-gray-200 w-1/3 py-10 px-20 text-right">
+        <div className="bg-gray-200 w-1/3 py-10 md:px-40 text-right">
           <h3 className="text-2xl font-semibold text-gray-500">ABOUT ME</h3>
         </div>
         <div className="bg-gray-100 block w-2/3 px-20 py-10 text-gray-800">
@@ -71,9 +71,14 @@ const IndexPage = ({ data }) => {
       </section>
       {/* =================== Experience =================== */}
       <section className="flex">
-        <div className="bg-gray-100 w-1/3 py-10 px-20 text-right">
+        <div className="bg-gray-100 w-1/3 py-10 md:px-40 text-right">
           <h3 className="text-2xl font-semibold text-gray-500">EXPERIENCE</h3>
+          <span className="text-l font-semibold text-gray-500">
+            Key Abilities Time Management Communication Adaptability Attention
+            to Detail Productivity & Organization
+          </span>
         </div>
+
         <div className="bg-gray-200 block w-2/3 px-20 py-10 text-gray-800">
           {data.allContentfulExperience.nodes.map((experience, idx) => (
             <article className="max-w-xl text-justify text-gray-800 first:mt-0 mt-10 last:border-b-0 border-b-2 border-gray-300">
@@ -101,7 +106,7 @@ const IndexPage = ({ data }) => {
 
       <div>
         <section className="flex">
-          <div className="bg-gray-200 w-1/3 py-10 px-20 text-right">
+          <div className="bg-gray-200 w-1/3 py-10 md:px-40 text-right">
             <h5 className="text-2xl font-semibold text-gray-500">SKILLS</h5>
           </div>
           <div className="bg-gray-100 block w-2/3 px-20 py-10 text-gray-800">
@@ -128,7 +133,7 @@ const IndexPage = ({ data }) => {
 
       <div>
         <section className="flex">
-          <div className="bg-gray-100 w-1/3 py-10 md:px-20 text-right">
+          <div className="bg-gray-100 w-1/3 py-10 md:px-40 text-right">
             <h5 className="text-2xl font-semibold text-gray-500">IDIOMS</h5>
           </div>
           <div className="bg-gray-200 block w-2/3 px-20 py-10 text-gray-800">
