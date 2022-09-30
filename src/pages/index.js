@@ -71,14 +71,29 @@ const IndexPage = ({ data }) => {
       </section>
       {/* =================== Experience =================== */}
       <section className="flex">
-        <div className="block bg-gray-100 w-1/3 py-10 md:px-40 text-right space-x-50">
-          <h3 className="text-2xl font-semibold text-blue-900">EXPERIENCE</h3>
-          <div className="text-xl text-gray-300">
+        <div className="bg-gray-100 w-1/3 py-10 md:px-40 text-right space-x-50">
+          <h3 className="py-10 text-2xl font-semibold text-blue-900">
+            EXPERIENCE
+          </h3>
+          <div className="text-xl text-gray-500">Key abilities</div>
+          <div className="text-xl text-gray-400">
             {data.allContentfulKeyAbilities.nodes.map(
-              (keyAbilities, abilities, idx) => (
+              (keyAbilities, _key1, _idx) => (
                 <>
-                  <section className="block text-center font-bold text-xl">
-                    {keyAbilities.abilities}
+                  <section className="whitespace-pre text-left md:text-justify text-xl">
+                    {keyAbilities.key1.key1}
+                  </section>
+                </>
+              )
+            )}
+          </div>
+          <div className="py-10 text-xl text-gray-500">Key abilities</div>
+          <div className="whitespace-pre-wrap text-xl text-gray-400">
+            {data.allContentfulKeyAbilities.nodes.map(
+              (keyAbilities, _key2, _idx) => (
+                <>
+                  <section className="whitespace-pre text-left md:text-justify text-xl">
+                    {keyAbilities.key2.key2}
                   </section>
                 </>
               )
@@ -193,7 +208,12 @@ export const query = graphql`
     allContentfulKeyAbilities {
       nodes {
         keyAbilities
-        abilities
+        key1 {
+          key1
+        }
+        key2 {
+          key2
+        }
       }
     }
   }
