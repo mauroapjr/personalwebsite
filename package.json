@@ -11,7 +11,9 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "terraform:plan" : "(cd terraform && terraform plan)",
+    "terraform:apply" : "(cd terraform && terraform apply -auto-approve)"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
