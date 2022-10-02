@@ -22,6 +22,7 @@ const IndexPage = ({ data }) => {
   );
 
   return (
+    /* =================== Profile Image and Name =================== */
     <>
       <section className="md:flex">
         <div className="bg-gray-100  py-10 flex justify-center md:w-1/3 md:py-40">
@@ -59,49 +60,33 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="flex">
-        <div className="bg-gray-200 w-1/3 py-10 md:px-40 text-right">
+      {/* =================== About me =================== */}
+      <section className="md:flex">
+        <div className="bg-gray-200 pl-4 md:w-1/3 py-10 md:px-40 md:text-right">
           <h3 className="text-2xl font-semibold text-blue-900">ABOUT ME</h3>
         </div>
-        <div className="bg-gray-100 block w-2/3 px-20 py-10 text-gray-800">
+        <div className="bg-gray-100 md:w-2/3 px-20 py-10 text-gray-800">
           <article className="max-w-xl space-y-4 text-justify">
             <ContentfulRichTech richText={data.contentfulHome.intro} />
           </article>
         </div>
       </section>
       {/* =================== Experience =================== */}
-      <section className="flex">
-        <div className="bg-gray-100 w-1/3 py-10 md:px-40 text-right space-x-50">
-          <h3 className="py-10 text-2xl font-semibold text-blue-900">
-            EXPERIENCE
-          </h3>
-          <div className="text-xl text-gray-500">Key abilities</div>
-          <div className="text-xl text-gray-400">
-            {data.allContentfulKeyAbilities.nodes.map(
-              (keyAbilities, _key1, _idx) => (
-                <>
-                  <section className="whitespace-pre text-left md:text-justify text-xl">
-                    {keyAbilities.key1.key1}
-                  </section>
-                </>
-              )
+      {data.allContentfulExperience.nodes.map((experience, arrayIndex) => (
+        <section className="flex">
+          <div className="bg-gray-100 w-1/3 py-10 md:px-40 text-right md:text-left ">
+            {arrayIndex === 0 && (
+              <h3 className="text-2xl text-right font-semibold text-blue-900">
+                EXPERIENCE
+              </h3>
             )}
+            <div className="text-xl text-left mt-10 text-gray-500">
+              Key abilities
+            </div>
+            <ContentfulRichTech richText={experience.keyAbilities} />
           </div>
-          <div className="py-10 text-xl text-gray-500">Key abilities</div>
-          <div className="whitespace-pre-wrap text-xl text-gray-400">
-            {data.allContentfulKeyAbilities.nodes.map(
-              (keyAbilities, _key2, _idx) => (
-                <>
-                  <section className="whitespace-pre text-left md:text-justify text-xl">
-                    {keyAbilities.key2.key2}
-                  </section>
-                </>
-              )
-            )}
-          </div>
-        </div>
-        <div className="bg-gray-200 block w-2/3 px-20 py-10 text-gray-800">
-          {data.allContentfulExperience.nodes.map((experience, idx) => (
+
+          <div className="bg-gray-200 w-2/3 px-20 py-10 text-gray-800">
             <article className="max-w-xl text-justify text-gray-800 first:mt-0 mt-10 last:border-b-0 border-b-2 border-gray-300">
               <h4 className="font-bold text-xl">{experience.title}</h4>
               <span className="block">{experience.companyName}</span>
@@ -121,10 +106,10 @@ const IndexPage = ({ data }) => {
                 <ContentfulRichTech richText={experience.description} />
               </span>
             </article>
-          ))}
-        </div>
-      </section>
-
+          </div>
+        </section>
+      ))}
+      {/* =================== Skills =================== */}
       <div>
         <section className="flex">
           <div className="bg-gray-200 w-1/3 py-10 md:px-40 text-right">
@@ -149,7 +134,7 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
       </div>
-
+      {/* =================== Idioms =================== */}
       <div>
         <section className="flex">
           <div className="bg-gray-100 w-1/3 py-10 md:px-40 text-right">
@@ -203,16 +188,8 @@ export const query = graphql`
         }
         companyName
         location
-      }
-    }
-    allContentfulKeyAbilities {
-      nodes {
-        keyAbilities
-        key1 {
-          key1
-        }
-        key2 {
-          key2
+        keyAbilities {
+          raw
         }
       }
     }

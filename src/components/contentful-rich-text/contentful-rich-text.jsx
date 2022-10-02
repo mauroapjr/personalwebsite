@@ -6,6 +6,13 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const options = {
+  renderText: (text) =>
+    text.split("\n").map((line) => (
+      <>
+        {line}
+        <br />
+      </>
+    )),
   renderMark: {
     [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
     [MARKS.ITALIC]: (text) => <i className="font-italic">{text}</i>,
