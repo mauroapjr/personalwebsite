@@ -62,7 +62,7 @@ const IndexPage = ({ data }) => {
       </section>
       {/* =================== About me =================== */}
       <section className="md:flex">
-        <div className="bg-gray-200 pl-10 md:w-1/3 py-10 md:px-40 md:text-right">
+        <div className="bg-gray-200 pl-10 md:w-1/3 py-10 px-0.5 md:px-20 text-left">
           <h3 className="text-2xl font-semibold text-blue-900">ABOUT ME</h3>
         </div>
         <div className="bg-gray-100 px-10 md:w-2/3 md:px-20 py-10 text-gray-800">
@@ -73,10 +73,10 @@ const IndexPage = ({ data }) => {
       </section>
       {/* =================== Experience =================== */}
       {data.allContentfulExperience.nodes.map((experience, arrayIndex) => (
-        <section className="flex  last:border-b-0 border-b-2 border-gray-300">
-          <div className="bg-gray-100 w-1/3 py-10 md:px-40 text-right md:text-left ">
+        <section className="flex">
+          <div className="bg-gray-100 w-1/3 py-10 px-0.5 md:px-20 text-left ">
             {arrayIndex === 0 && (
-              <h3 className="text-2xl text-right font-semibold text-blue-900">
+              <h3 className="text-2xl text-left font-semibold text-blue-900">
                 EXPERIENCE
               </h3>
             )}
@@ -86,7 +86,7 @@ const IndexPage = ({ data }) => {
             <ContentfulRichTech richText={experience.keyAbilities} />
           </div>
 
-          <div className="bg-gray-200 w-2/3 px-20 py-10 text-gray-800">
+          <div className="bg-gray-200 w-2/3 px-10 py-10 md:px-20 text-gray-800">
             <article className="max-w-xl text-justify text-gray-800 first:mt-0 mt-10">
               <h4 className="font-bold text-xl">{experience.title}</h4>
               <span className="block">{experience.companyName}</span>
@@ -112,36 +112,24 @@ const IndexPage = ({ data }) => {
       {/* =================== Skills =================== */}
       <div>
         <section className="flex">
-          <div className="bg-gray-200 w-1/3 py-10 md:px-40 text-right">
+          <div className="bg-gray-200 w-1/3 py-10 px-0.5 md:px-20 text-left">
             <h5 className="text-2xl font-semibold text-blue-900">SKILLS</h5>
           </div>
-          <div className="bg-gray-100 block w-2/3 px-20 py-10 text-gray-800">
-            <article className="max-w-xl my-4 space-y-4 text-justify">
-              JavaScript
-            </article>
-            <article className="max-w-xl my-4 space-y-4 text-justify">
-              HTML/CSS
-            </article>
-            <article className="max-w-xl my-4 space-y-4 text-justify">
-              React
-            </article>
-            <article className="max-w-xl my-4 space-y-4 text-justify">
-              GitHub
-            </article>
-            <article className="max-w-xl my-4 space-y-4 text-justify">
-              AWS
-            </article>
+          <div className="bg-gray-100 block w-2/3 px-10 py-10 md:px-20 text-gray-800">
+            {data.allContentfulSkills.nodes.map((skillName) => (
+              <div className="block">{skillName.skillName}</div>
+            ))}
           </div>
         </section>
       </div>
       {/* =================== Idioms =================== */}
       <section className="flex">
-        <div className="bg-gray-100 w-1/3 py-10 md:px-40 text-right">
+        <div className="bg-gray-100 w-1/3 py-10 px-0.5 md:px-20 text-left">
           <h5 className="text-2xl font-semibold text-blue-900">IDIOMS</h5>
         </div>
-        <div className="bg-gray-200 w-2/3 py-10 px-20 md:px-40 ">
+        <div className="bg-gray-200 w-2/3 px-10 py-10 md:px-20 ">
           {data.allContentfulIdioms.nodes.map((idiom) => (
-            <div className="block ">
+            <div className="block">
               {idiom.idiom} - {idiom.level}
             </div>
           ))}
@@ -191,6 +179,11 @@ export const query = graphql`
       nodes {
         idiom
         level
+      }
+    }
+    allContentfulSkills {
+      nodes {
+        skillName
       }
     }
   }
