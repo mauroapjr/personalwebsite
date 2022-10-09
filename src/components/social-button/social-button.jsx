@@ -17,7 +17,7 @@ export const SocialButton = ({ icon, link }) => {
 
   return (
     <a
-      className="bg-gray-200 p-2 border-2 border-gray-600 text-gray-600 rounded-md text-[20px]"
+      className="bg-gray-200 p-2 border-2 border-gray-400 text-gray-400 rounded-md text-[20px]"
       href={link}
     >
       <Icon iconName={icon} />
