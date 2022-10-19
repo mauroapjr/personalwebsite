@@ -62,7 +62,7 @@ const IndexPage = ({ data }) => {
       </section>
       {/* =================== About me =================== */}
       <section className="md:flex">
-        <div className="bg-gray-200 pl-10 md:w-1/4 py-10 px-0.5 md:px-20 text-left">
+        <div className="bg-gray-200 pl-10 md:w-1/4 py-10 px-0.5 md:px-10 text-left">
           <h3 className="text-2xl font-semibold text-blue-900">ABOUT ME</h3>
         </div>
         <div className="bg-gray-100 px-10 md:w-3/4 md:px-20 py-10 text-gray-800">
@@ -74,7 +74,7 @@ const IndexPage = ({ data }) => {
       {/* =================== Experience =================== */}
       {data.allContentfulExperience.nodes.map((experience, arrayIndex) => (
         <section className="md:flex">
-          <div className="bg-gray-300 pl-10 md:w-1/4 py-10 px-0.5 md:px-20 text-left ">
+          <div className="bg-gray-300 pl-10 md:w-1/4 py-10 px-0.5 md:px-10 text-left ">
             {arrayIndex === 0 && (
               <h3 className="text-2xl text-left font-semibold text-blue-900">
                 EXPERIENCE
@@ -112,7 +112,7 @@ const IndexPage = ({ data }) => {
       {/* =================== Skills =================== */}
       <div>
         <section className="md:flex">
-          <div className="bg-gray-200 pl-10 md:w-1/4 py-10 px-0.5 md:px-20 text-left ">
+          <div className="bg-gray-200 pl-10 md:w-1/4 py-10 px-0.5 md:px-10 text-left ">
             <h5 className="text-2xl text-left font-semibold text-blue-900">
               SKILLS
             </h5>
@@ -126,7 +126,7 @@ const IndexPage = ({ data }) => {
       </div>
       {/* =================== Idioms =================== */}
       <section className="md:flex">
-        <div className="bg-gray-300 pl-10 md:w-1/4 py-10 px-0.5 md:px-20 text-left">
+        <div className="bg-gray-300 pl-10 md:w-1/4 py-10 px-0.5 md:px-10 text-left">
           <h5 className="text-2xl font-semibold text-blue-900">IDIOMS</h5>
         </div>
         <div className="px-10 md:w-3/4 md:px-20 py-10 text-gray-800 ">
