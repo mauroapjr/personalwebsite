@@ -18,9 +18,9 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: "G-K76XRD91Y5",
+        trackingId: ["G-K76XRD91Y5"],
       },
     },
     "gatsby-plugin-sitemap",
