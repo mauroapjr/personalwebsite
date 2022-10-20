@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        trackingId: ["G-K76XRD91Y5"],
+        trackingId: "G-K76XRD91Y5",
       },
     },
     "gatsby-plugin-sitemap",
