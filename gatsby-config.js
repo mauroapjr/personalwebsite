@@ -17,7 +17,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",
-    "gatsby-plugin-google-gtag",
+
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
