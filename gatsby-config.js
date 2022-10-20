@@ -17,12 +17,13 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",
+    "gatsby-plugin-google-gtag",
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-sitemap",
       options: {
         trackingId: ["G-K76XRD91Y5"],
       },
     },
-    `gatsby-plugin-google-gtag`,
+    "gatsby-plugin-sitemap",
   ],
 };
