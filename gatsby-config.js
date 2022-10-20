@@ -23,6 +23,6 @@ module.exports = {
         trackingId: ["G-K76XRD91Y5"],
       },
     },
-    "gatsby-plugin-sitemap",
+    `gatsby-plugin-google-gtag`,
   ],
 };
