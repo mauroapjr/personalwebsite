@@ -66,7 +66,7 @@ const IndexPage = ({ data }) => {
           <h3 className="text-2xl font-semibold text-blue-900">ABOUT ME</h3>
         </div>
         <div className="bg-gray-100 px-10 md:w-3/4 md:px-20 py-10 text-gray-800">
-          <article className="max-w-xl space-y-4 text-justify">
+          <article className="max-w-xl space-y-4 text-left">
             <ContentfulRichTech richText={data.contentfulHome.intro} />
           </article>
         </div>
@@ -87,7 +87,10 @@ const IndexPage = ({ data }) => {
           </div>
 
           <div className="px-10 md:w-3/4 md:px-20 py-10 text-gray-800">
-            <article className="max-w-xl text-justify space-y-4 text-gray-800">
+            <article
+              className="max-w-xl text-left
+             space-y-4 text-gray-800"
+            >
               <h4 className="font-bold text-xl">{experience.title}</h4>
               <span className="block">{experience.companyName}</span>
               <span className="space-x-8 lock text-sm text-gray-600">
