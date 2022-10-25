@@ -13,11 +13,17 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
+
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",
-
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "G-K76XRD91Y5",
+      },
+    },
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
