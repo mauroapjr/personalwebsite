@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
+    "dotenv": "^16.0.3",
     "gatsby": "^4.23.1",
     "gatsby-plugin-google-analytics": "^4.24.0",
     "gatsby-plugin-google-gtag": "^4.24.0",
