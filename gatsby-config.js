@@ -24,13 +24,15 @@ module.exports = {
         trackingId: "G-K76XRD91Y5",
       },
     },
-
     {
-      resolve: "gatsby-plugin-sitemap",
+      resolve: "gatsby-plugin-google-gtag",
       options: {
-        trackingId: "G-K76XRD91Y5",
+        trackingIds: ["G-K76XRD91Y5", "4089016460"],
+        pluginConfig: {
+          head: true,
+          anonymize: true,
+        },
       },
     },
-    "gatsby-plugin-sitemap",
   ],
 };
