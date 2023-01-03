@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
       <section className="md:flex">
         <div className="bg-gray-300  py-10 flex justify-center md:w-1/4 md:py-20">
           <img
-            src={`${data.contentfulHome.profilePhoto.url} ?f=face&fit=thumb&r=png`}
+            src={`${data.contentfulHome.profilePhoto.url}?f=face&fit=thumb&r=235&h=235&fm=png`}
             alt=""
             className=""
           />
